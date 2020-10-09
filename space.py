@@ -11,8 +11,8 @@ API_ENDPOINT = "http://api.open-notify.org/astros.json"
 def fetch_astros():
     """ Fetch details of who is in space from the API."""
     response = urllib.request.urlopen(API_ENDPOINT)
-    lines = response.readlines()
-    decoded_line = bytes.decode(lines[0])
+    b = response.read()
+    decoded_line = bytes.decode(b)
     return json.loads(decoded_line)
 
 
