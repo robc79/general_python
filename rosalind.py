@@ -161,6 +161,7 @@ def motif(s, t):
 
 
 def _restriction_sites(s, l):
+    """ Find all restriction sites of length l in s."""
     locations = []
     for i in range(len(s)):
         r = s[i:i+l]
