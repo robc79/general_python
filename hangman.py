@@ -38,7 +38,7 @@ while not word_guessed and len(incorrect_letters) < MAX_INCORRECT_LETTERS:
 # End of game message.
 if word_guessed:
     show_word(word, guessed_letters)
-    print("Well done! You guessed the word in {} guesses.".format(
-        len(guessed_letters) + len(incorrect_letters)))
+    print("Well done! You guessed the word with {} wrong guesses.".format(
+        len(incorrect_letters)))
 else:
     print(f"Too many wrong guesses! The word was '{word}'")
