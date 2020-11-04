@@ -16,11 +16,10 @@ def show_word(word, letters):
 word = "something" # TODO: read this from a list of common words (part 2).
 guessed_letters = []
 incorrect_letters = []
-word_guessed = False
 
 
 # Game loop.
-while not word_guessed and len(incorrect_letters) < MAX_INCORRECT_LETTERS:
+while len(guessed_letters) != len(word) and len(incorrect_letters) < MAX_INCORRECT_LETTERS:
     show_word(word, guessed_letters)
     print("Wrong guesses: ", end="")
     for l in incorrect_letters:
@@ -29,14 +28,13 @@ while not word_guessed and len(incorrect_letters) < MAX_INCORRECT_LETTERS:
     picked_letter = ""
     while picked_letter == "":
         picked_letter = input("Guess a letter > ")
+        picked_letter = picked_letter[0]
     if picked_letter in word:
         guessed_letters.append(picked_letter)
-        if len(guessed_letters) == len(word):
-            word_guessed = True
     else:
         incorrect_letters.append(picked_letter)
 # End of game message.
-if word_guessed:
+if len(guessed_letters) == len(word):
     show_word(word, guessed_letters)
     print("Well done! You guessed the word with {} wrong guesses.".format(
         len(incorrect_letters)))
