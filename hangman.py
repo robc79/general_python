@@ -21,9 +21,7 @@ def get_letter():
     letter = ""
     while letter == "":
         letter = input("Guess a letter > ")
-        if letter != "":
-            letter = letter[0]
-    return letter
+    return letter[0]
 
 
 word = "cat" # TODO: read this from a list of common words (part 2).
