@@ -108,3 +108,34 @@ def area_of_room():
     area_sqm = area_sqf * CONVERSION_FACTOR
     print(f"{area_sqm} square meters")
 
+
+def pizza_party():
+    """Calculate the number of slices of pizza each person gets."""
+    people = 0
+    while people < 1:
+        raw_people = input("How many people? ")
+        try:
+            people = int(raw_people)
+        except ValueError:
+            pass
+    pizzas = 0
+    while pizzas < 1:
+        raw_pizza = input("How many pizzas do you have? ")
+        try:
+            pizzas = int(raw_pizza)
+        except ValueError:
+            pass
+    slices_per_pizza = 0
+    while slices_per_pizza < 1:
+        raw_slices_per_pizza = input("How many slices per pizza? ")
+        try:
+            slices_per_pizza = int(raw_slices_per_pizza)
+        except ValueError:
+            pass
+    print(f"{people} people with {pizzas} pizzas in {slices_per_pizza} slices")
+    total_slices = pizzas * slices_per_pizza
+    slices_per_person = total_slices // people
+    leftovers = total_slices % people
+    print(f"Each person gets {slices_per_person} slices of pizza.")
+    print(f"There are {leftovers} leftover slices.")
+
