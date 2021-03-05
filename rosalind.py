@@ -4,6 +4,7 @@ A = "A"
 C = "C"
 G = "G"
 T = "T"
+U = "U"
 
 
 RNA_CODON = {
@@ -92,7 +93,8 @@ def dna2rna(s):
     """Transcribe string s to rna."""
     if len(s) > 1000:
         raise ValueError("String exceeds maximum length of 1000.")
-    return s.replace("t", "u")
+    ns = s.upper()
+    return ns.replace(T, U)
 
 
 def reverse_compliment(s):
